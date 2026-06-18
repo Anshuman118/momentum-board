@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Momentum Board</title>
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace" aria-label="Momentum Board app">
+        <header class="topbar">
+          <a class="brand" href="#" aria-label="Momentum Board home">
+            <img src="assets/logo.svg" alt="" />
+            <span>Momentum Board</span>
+          </a>
+          <div class="topbar-actions">
+            <button class="ghost-button" id="themeButton" type="button" aria-pressed="false">
+              Dark
+            </button>
+            <button class="ghost-button" id="resetButton" type="button">Reset</button>
+          </div>
+        </header>
+
+        <section class="hero-panel">
+          <div>
+            <p class="eyebrow">Today's Progress</p>
+            <h1 id="progressTitle">Build your streak one task at a time.</h1>
+          </div>
+          <div class="progress-ring" aria-label="Task completion progress">
+            <svg viewBox="0 0 120 120" role="img" aria-hidden="true">
+              <circle class="ring-track" cx="60" cy="60" r="52"></circle>
+              <circle class="ring-fill" id="ringFill" cx="60" cy="60" r="52"></circle>
+            </svg>
+            <strong id="progressPercent">0%</strong>
+          </div>
+        </section>
+
+        <section class="input-row" aria-label="Add a new task">
+          <input id="taskInput" type="text" placeholder="Add a small win..." maxlength="60" />
+          <button id="addButton" type="button">Add</button>
+        </section>
+
+        <section class="board-grid">
+          <article class="panel">
+            <div class="panel-heading">
+              <h2>Tasks</h2>
+              <span id="taskCount">0 open</span>
+            </div>
+            <ul class="task-list" id="taskList" aria-live="polite"></ul>
+          </article>
+
+          <article class="panel accent-panel">
+            <div class="panel-heading">
+              <h2>Focus Timer</h2>
+              <span id="timerModeLabel">25 min</span>
+            </div>
+            <div class="timer-face" id="timerDisplay">25:00</div>
+            <div class="timer-modes" aria-label="Timer length">
+              <button class="is-selected" type="button" data-minutes="15">15</button>
+              <button type="button" data-minutes="25">25</button>
+              <button type="button" data-minutes="50">50</button>
+            </div>
+            <div class="timer-controls">
+              <button id="timerToggle" type="button">Start</button>
+              <button class="ghost-button" id="timerReset" type="button">Clear</button>
+            </div>
+          </article>
+        </section>
+      </section>
+    </main>
+
+    <template id="taskTemplate">
+      <li class="task-item">
+        <label>
+          <input type="checkbox" />
+          <span></span>
+        </label>
+        <button type="button" aria-label="Delete task">&times;</button>
+      </li>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
