@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Momentum Board logo">
+  <rect width="64" height="64" rx="14" fill="#316b83"/>
+  <path d="M18 35.5 27 44l20-24" fill="none" stroke="#fffaf0" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="46" cy="18" r="7" fill="#ef6f6c"/>
+</svg>
